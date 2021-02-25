@@ -76,7 +76,7 @@ def run_experiments(env_name, save_folder):
             'cnn',
             env_name[:-14],
             'lr=1e{:.2}_l2=1e{:.2}'.format(
-                env_name[:-14], math.log10(lr), math.log10(l2)
+                math.log10(lr), math.log10(l2)
             )),
         decay_type='cos'
     )
@@ -91,10 +91,10 @@ def run_experiments(env_name, save_folder):
         lr_list=[vae_standalone_lr],
         vae_l2_reg_list=[vae_standalone_l2],
         num_actions=num_actions,
-        log_dir=os.path.join(save_folder, 'separate_vae_predictor', 'predictor',
+        log_dir=os.path.join(save_folder, 'separate_vae_predictor', 'vae',
                              'logs', env_name[:-14]),
-        save_dir=os.path.join(save_folder, 'separate_vae', 'predictor',
-                              env_name[:-14]),
+        save_dir=os.path.join(save_folder, 'separate_vae_predictor',
+                              'vae', env_name[:-14]),
         epochs=epochs,
         predict_hidden_layers=num_hidden_layers,
         cosine_decay_steps=train_loader.__len__()*epochs,

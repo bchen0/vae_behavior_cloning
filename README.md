@@ -16,8 +16,9 @@ alternative behavior cloning models, on the trajectory data.
 3)  Testing the trained imitator models on gameplay.
 
 Due to different package requirements, 1 and 3 are done in the "gameplay" 
-directory. The requirements are listed in that directory. 2) is performed in 
-this main directory.
+directory. 2) is performed in 
+this main directory. The requirements for the main directory and in gameplay
+are listed in the requirements.txt file in each directory.
 
 __Instructions for Generating Trajectory Data__: 
 
